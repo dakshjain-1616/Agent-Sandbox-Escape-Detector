@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "agent-sandbox-escape-detector"
+version = "1.0.0"
+description = "Black-box test LLM agent systems for sandbox escape vulnerabilities"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+    "anthropic>=0.107.0",
+    "fastapi>=0.136.0",
+    "uvicorn[standard]>=0.49.0",
+    "httpx>=0.28.0",
+    "pydantic>=2.13.0",
+    "pydantic-settings>=2.14.0",
+    "rich>=15.0.0",
+    "python-dotenv>=1.2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.0",
+    "pytest-asyncio>=1.4.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
